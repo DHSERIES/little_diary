@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>My Diary Entries</h2>
+  <ul>
+    {% for entry in entries %}
+      <li>
+        <a href="{% url 'entry_detail' entry.pk %}">{{ entry.title }}</a> -
+        {{ entry.date_created|date:'Y-m-d' }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ entry.title }}</h2>
+<p>{{ entry.content }}</p>
+<p>Created on: {{ entry.date_created|date:'Y-m-d' }}</p>
+
+<a href="{% url 'entry_update' entry.pk %}" class="btn btn-primary">Edit</a>
+<a href="{% url 'entry_delete' entry.pk %}" class="btn btn-danger">Delete</a>
+{% endblock content %}
